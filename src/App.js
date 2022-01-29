@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import { browserRouter as Router, Route, Swich } from 'react-router-dom';
+import Navbar from './Components/Navbar/Navbar'
+import FloatingCart from './Components/FloatingCart/FloatingCart'
+import Home from './Pages/Home/Home'
+import Contact from './Pages/Contact/Contact'
+import ShoppingCart from './Pages/ShopppingCart/ShoppingCart'
+import Products from './Pages/Products/Products'
+import ProductShowcase from './Pages/ProductShowcase/ProductShowcase'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Navbar />
+      <FloatingCart />
+      <Swich> 
+          <Route exact path="/" component={Home} />
+          <Route exact path="/produits" component={Products} />
+          <Route exact path="/produits/:id" component={ProductShowcase} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/shoppingCart" component={ShoppingCart} />
+      
+      </Swich>
+
+
+    </Router>
   );
 }
 
