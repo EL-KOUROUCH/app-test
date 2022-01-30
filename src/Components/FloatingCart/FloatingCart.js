@@ -9,9 +9,11 @@ export default function FloatingCart() {
   const shoppingCart = useSelector(state => state)
 
   let totalItems = 0;
+  if (shoppingCart){
   for(const item of shoppingCart.cart){
     totalItems += item.quantity;
   }
+}
 
   return (
     <Link to="/shoppingCart">

@@ -47,4 +47,7 @@ export default function cartReducer(state = INITIAL_STATE, action) {
             return {
               cart: newArr,
             };
-        }
+            
+            default: return null;
+
+        } }
